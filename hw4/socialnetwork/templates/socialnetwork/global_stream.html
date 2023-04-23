@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Social Network</title>
+        <link rel="stylesheet" href="/static/socialnetwork/base.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="screen">
+            <div id="id_header_div" class="header">
+                <div class="headerLeftBox">
+                    <h1 id="id_site_name" class="headerText">Blog Master</h1>
+                </div>
+                <div class="headerRightBox">
+                    <div class="headerRightUpBox">
+                        <a id="id_nav_profile" class="headerRightDownLink" href="my_profile">{{user.get_full_name}}</a>
+                    </div>
+                    <div class="headerRightDownBox">
+                        <a id="id_nav_global_stream" class="headerRightDownLink" href="global_stream">Global</a>
+                        <a id="id_nav_follower_stream" class="headerRightDownLink" href="follower_stream">Follower</a>
+                        <a id="id_nav_logout" class="headerRightDownLink" href={% url 'logout' %}>Logout</a>
+                    </div>
+                </div>
+            </div><br/><br/>
+            <h3 id="id_page_name">Global Stream</h3>
+
+            <form method="POST" >
+                {% csrf_token %}
+                <table>
+                    <form method="POST">
+                        <tr>
+                            <td>
+                                <label> New Post: </label>
+                                <input id="id_post_input_text" type="text" name="post_input_text">
+                                <button id="id_post_button" type="submit">Submit</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div id="id_post_div_1">
+                                    Post by <a id="id_post_profile_1" style="font-family: verdana;" href="other_profile">{{post_author}}</a> - <b id="id_post_text_1">{{post_text}}</b> - <p id="id_post_date_time_1" style="font-family: Times;">{{post_time}}</p>
+                                    <ul>
+                                        <li>
+                                            <div id="id_comment_div_1">
+                                                Comment by <a id="id_comment_profile_1" style="font-family: verdana;" href="other_profile">{{comment_author}}</a> - <b id="id_comment_text_1">{{comment_text}}</b> - <p id="id_comment_date_time_1" style="font-family: Times;">{{comment_time}}</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label> New Comment: </label>
+                                <input id="id_comment_input_text_1" type="text" name="comment_input_text">
+                                <button id="id_comment_button_1"  type="submit">Submit</button>
+                            </td>
+                        </tr>
+
+                        {% csrf_token %}
+                    </form>
+
+                    
+
+                    <!-- <tr>
+                        <td></td>
+                        <td><button id="id_login_button" type="submit">Submit</button></td>
+                    </tr> -->
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Social Network</title>
+        <link rel="stylesheet" href="/static/socialnetwork/base.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="screen">
+            <div id="id_header_div" class="header">
+                <div class="headerLeftBox">
+                    <h1 id="id_site_name" class="headerText">Blog Master</h1>
+                </div>
+                <div class="headerRightBox">
+                    <div class="headerRightUpBox">
+                        <a id="id_nav_profile" class="headerRightDownLink" href="my_profile">{{user.get_full_name}}</a>
+                    </div>
+                    <div class="headerRightDownBox">
+                        <a id="id_nav_global_stream" class="headerRightDownLink" href="global_stream">Global</a>
+                        <a id="id_nav_follower_stream" class="headerRightDownLink" href="follower_stream">Follower</a>
+                        <a id="id_nav_logout" class="headerRightDownLink" href={% url 'logout' %}>Logout</a>
+                    </div>
+                </div>
+            </div><br/><br/>
+            <h3 id="id_page_name">Profile Page for {{user.get_full_name}}</h3>
+
+            {% load static %} <img id="id_user_picture" src={% static "socialnetwork/images/default.jpg" %} width="200" height="200" />
+
+            <form method="POST" >
+                {% csrf_token %}
+                <table>
+                    <form method="POST">
+                        <tr>
+                            <td>
+                                <input id="id_bio_input_text" type="text" name="bio_input_text">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Profile Picture:
+                                <button id="id_profile_picture">Choose File</button>
+                                <button id="id_update_profile_button"  type="submit">Submit</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                Your are following:
+                                <p id="id_profile_link_1"></p>
+                            </td>
+                        </tr>
+
+                        {% csrf_token %}
+                    </form>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
