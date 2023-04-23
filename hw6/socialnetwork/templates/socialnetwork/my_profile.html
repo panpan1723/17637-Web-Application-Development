@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Social Network</title>
+        <link rel="stylesheet" href="/static/socialnetwork/base.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="screen">
+            <div id="id_header_div" class="header">
+                <div class="headerLeftBox">
+                    <h1 id="id_site_name" class="headerText">Blog Master</h1>
+                </div>
+                <div class="headerRightBox">
+                    <div class="headerRightUpBox">
+                        <a id="id_nav_profile" class="headerRightDownLink" href="{% url 'my_profile' %}">{{user.get_full_name}}</a>
+                    </div>
+                    <div class="headerRightDownBox">
+                        <a id="id_nav_global_stream" class="headerRightDownLink" href="{% url 'global_stream' %}">Global</a>
+                        <a id="id_nav_follower_stream" class="headerRightDownLink" href="{% url 'follower_stream' %}">Follower</a>
+                        <a id="id_nav_logout" class="headerRightDownLink" href={% url 'logout' %}>Logout</a>
+                    </div>
+                </div>
+            </div><br/><br/>
+            <h3 id="id_page_name">Profile Page for {{user.get_full_name}}</h3>
+
+            {% if not profile.picture %}
+                {% load static %} <img id="id_user_picture" src="{% static 'socialnetwork/default.jpg' %}" width="200" height="200" />
+            {% else %}
+                <img id="id_user_picture" src="{% url 'photo' profile.user.id %}" width="200" height="200" />
+            {% endif %}
+
+            <form accept="{% url 'my_profile' %}" method="POST" enctype="multipart/form-data">
+                <table>
+                    {{form}}
+                </table>
+                {% csrf_token %}
+                <button id="id_update_profile_button"  type="submit">Submit</button>
+            </form>
+
+            <div>
+                You are following:
+                <ul>
+                    {% for u in profile.following.all %}
+                    <li>
+                        <a href="{% url 'other_profile' u.id %}" id="id_profile_link_{{u}}">
+                            {{u.first_name}} {{u.last_name}}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Social Network</title>
+        <link rel="stylesheet" href="/static/socialnetwork/base.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="screen">
+            <div id="id_header_div" class="header">
+                <div class="headerLeftBox">
+                    <h1 id="id_site_name" class="headerText">Blog Master</h1>
+                </div>
+                <div class="headerRightBox">
+                    <div class="headerRightUpBox">
+                        <a id="id_nav_profile" class="headerRightDownLink" href="{% url 'my_profile' %}">{{user.get_full_name}}</a>
+                    </div>
+                    <div class="headerRightDownBox">
+                        <a id="id_nav_global_stream" class="headerRightDownLink" href="{% url 'global_stream' %}">Global</a>
+                        <a id="id_nav_follower_stream" class="headerRightDownLink" href="{% url 'follower_stream' %}">Follower</a>
+                        <a id="id_nav_logout" class="headerRightDownLink" href={% url 'logout' %}>Logout</a>
+                    </div>
+                </div>
+            </div><br/><br/>
+            <h3 id="id_page_name">Profile Page for {{profile.user.get_full_name}}</h3>
+
+            {% if not profile.picture %}
+                {% load static %} <img id="id_user_picture" src="{% static 'socialnetwork/default.jpg' %}" width="200" height="200" />
+            {% else %}
+                <img id="id_user_picture" src="{% url 'photo' profile.user.id %}" width="200" height="200" />
+            {% endif %}
+
+            <div id="id_user_bio">
+                {{profile.bio}}
+            </div>
+
+            {% if profile.user in request.user.profile.following.all %}
+                <form action="{% url 'unfollow' profile.user.id %}" method="POST">
+                    <button id="id_unfollow">Unfollow</button>
+                    {% csrf_token %}
+                </form>
+            {% else %}
+                <form action="{% url 'follow' profile.user.id %}" method="POST">
+                    <button id="id_follow">Follow</button>
+                    {% csrf_token %}
+                </form>
+            {% endif %}
+        </div>
+    </body>
+</html>
