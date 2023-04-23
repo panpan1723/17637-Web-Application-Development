@@ -1,0 +1,135 @@
+{% extends "cmuplus/base.html" %}
+{% block content %}
+<div class="main-page-container">
+    <!-- <a href="{% url 'social:begin' 'google-oauth2' %}" class="main-page-text">Login</a> -->
+    <br>
+    <span class="main-page-text1">CMU+</span>
+</div>
+
+<div class="main-page-container1">
+    <div class="course_search" method="GET">
+        <form action="{% url 'course_info' '-1' %}"> {% csrf_token %}
+            <input id="course_search_input" type="text" name="course_num" placeholder="Course number e.g. 17637">
+            <button type="submit" value="search"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+
+</div>
+
+<div class="blog-page-container">
+    <span class="main-page-text1">{{message}}</span>
+    <div class="main-page-blog">
+        {% for curr_experience in course_experience %}
+            <div class="blog-post-card2-blog-post-card blog-post-card2-root-class-name2 bg-white p-3 my-3">
+                <div class="blog-post-card2-container">
+
+                    <div class="blog-post-card2-container1 text-muted">
+                        <span class="blog-post-card2-text" style="font-style:italic;"><span>Creation Time: {{curr_experience.creation_time}}</span></span>
+                    </div>
+
+                    <h3 class="blog-post-card2-text1 text-primary">
+                        <span>{{curr_experience.course_number}}-{{curr_experience.course_name}} ({{curr_experience.semester}})</span>
+                    </h3>
+
+                    <span class="blog-post-card2-text2">
+                        <span>
+                            {{curr_experience.subject}}
+                        </span>
+                    </span>
+                    <br>
+
+                    <div class="blog-post-card2-container2">
+                        <div class="blog-post-card2-profile">
+                            {% if curr_experience.is_anonymous == 1 %}
+                            <span class="blog-post-card2-text3"><span>Anonymous User</span></span>
+                            {% else %}
+                            <span class="blog-post-card2-text3"><span>{{curr_experience.created_by}}</span></span>
+                            {% endif %}
+                        </div>
+                        <!-- <a href="{% url 'display_experience' curr_experience.id %}">
+                        <span class="blog-post-card2-text4">Read More -&gt;</span>
+                        </a> -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-{{curr_experience.id}}">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal" id="modal-{{curr_experience.id}}">
+                <div class="modal-dialog">
+                <div class="modal-content">
+            
+                    <!-- 模态标题 -->
+                    <div class="modal-header">
+                    <h4 class="modal-title">
+                        <a href="{% url 'course_info' curr_experience.course_number %}">
+                            <span id="course_name" class="display-experience-page-text">
+                                Course: {{curr_experience.course_name}}-{{curr_experience.course_number}}
+                            </span>
+                        </a>
+                        </a>
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+            
+                    <!-- 模态主体 -->
+                    <div class="modal-body">
+                        <span id="semester" class="display-experience-page-text01">Semester: {{curr_experience.semester}}</span>
+                            <div id="professor_firstname">
+                                Professor Firstname: {{curr_experience.professor_firstname}}
+                            </div>
+                            <div id="professor_lastname">
+                                Professor Lastname: {{curr_experience.professor_lastname}}
+                            </div>
+                            <div id="credit">
+                                Credit: {{curr_experience.credit}}
+                            </div>
+                            <div id="load">
+                                Load: {{curr_experience.load}}
+                            </div>
+                            <div id="grade_satisfaction">
+                                Grade Satisfaction: {{curr_experience.grade_satisfication}}
+                            </div>
+                            <div id="difficulty">
+                                Difficulty: {{curr_experience.difficulty}}
+                            </div>
+                            <div id="grade">
+                                Grade: {{curr_experience.grade}}
+                            </div>
+                            <div id="subject">
+                                Subject: {{curr_experience.subject}}
+                            </div>
+                            <div id="content">
+                                Content: {{curr_experience.content}}
+                            </div>
+
+                            {% if curr_experience.is_anonymous == 1 %}
+                            <div id="created_by">
+                                Created By: Anonymous User
+                            </div>
+                            {% else %}
+                            <div id="created_by">
+                                Created By: {{curr_experience.created_by}}
+                            </div>
+                            {% endif %}
+
+                            <div id="creation_time" style="font-style:italic;" class="text-muted">
+                                Creation Time: {{curr_experience.creation_time}}
+                            </div>
+                    </div>
+            
+                    <!-- 模态页脚 -->
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+            
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+        <!-- Modal Window -->
+    </div>
+</div>
+{% endblock %}

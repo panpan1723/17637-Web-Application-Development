@@ -1,0 +1,145 @@
+1,17200,Ethics and Policy Issues in Computing,Skirpan
+2,17210,Introduction to Social Networks,Park
+3,17303,"Cryptocurrencies, Blockchains and Applications",Christin
+4,17313,Foundations of Software Engineering,Razak
+5,17333,"Privacy Policy, Law, and Technology",Bauer
+6,17363,Programming Language Pragmatics,Aldrich
+7,17402,AI and Emerging Economies,Mani
+8,17415,Software Engineering Reflection,Sunshine
+9,17437,Web Application Development,Eppinger
+10,17445,Machine Learning in Production,Kaestner
+11,17480,API Design and Implementation:,Garrod
+12,17562,Law of Computer Technology,Shamos
+13,17599,Advanced Topics in Machine Learning and Game Theory,Fang
+14,17603,Communications for Software Leaders I,Frollini
+15,17606,Privacy by Design Project Workshop,McDonald
+16,17607,Privacy by Design Practicum,McDonald
+17,17608,Privacy Engineering Independent Study,McDonald
+18,17609,Internship for Privacy Engineering,McDonald
+19,17611,Statistics for Decision Making,Pavetti
+20,17611,Statistics for Decision Making,Miranda
+21,17612,Business and Marketing Strategy,Berardone
+22,17612,Business and Marketing Strategy,Vadlamudi
+23,17615,Data Structures and Algorithms,Bass
+24,17617,Programming Quantum Computers,Justice
+25,17620,Quantum Computing: Circuit Mappings,Justice
+26,17621,Computer Simulation of Complex Socio-Technical Systems,Carley
+27,17622,Agile Methods,Miranda
+28,17622,Agile Methods,Chick
+29,17626,Requirements for Information Systems,Breaux
+30,17627,Requirements for Embedded Systems,Pavetti
+31,17637,Web Application Development,Eppinger
+32,17645,Machine Learning in Production,Kaestner
+33,17662,Law of Computer Technology,Shamos
+34,17663,Programming Language Pragmatics,Aldrich
+35,17670,Virtual Machines and Managed Runtimes,Titzer
+36,17673,Studio Project III,Berardone
+37,17675,Software Engineering Practicum,Berardone
+38,17681,Java for Application Programmers,Lee
+39,17683,Data Structures for Application Programmers,Lee
+40,17684,Ethics and Policy Issues in Computing,Skirpan
+41,17695,Design Patterns,Ashok
+42,17699,Independent Study,Breaux
+43,17703,"Cryptocurrencies, Blockchains and Applications",Christin
+44,17710,Introduction to Social Networks,Park
+45,17733,"Privacy Policy, Law, and Technology",Bauer
+46,17745,Machine Learning in Production,Kaestner
+47,17759,Advanced Topics in Machine Learning and Game Theory:,Fang
+48,17762,Law of Computer Technology,Shamos
+49,17780,API Design and Implementation,Garrod
+50,17791,Software Engineering Seminar,Kaestner
+51,17802,Societal Computing Pre-Thesis,Carley
+52,17802,Societal Computing Pre-Thesis,Sadeh
+53,17802,Societal Computing Pre-Thesis,Pfeffer
+54,17802,Societal Computing Pre-Thesis,Cranor
+55,17802,Societal Computing Pre-Thesis,Agarwal
+56,17802,Societal Computing Pre-Thesis,Bauer
+57,17802,Societal Computing Pre-Thesis,Herbsleb
+58,17802,Societal Computing Pre-Thesis,Breaux
+59,17802,Societal Computing Pre-Thesis,Vasilescu
+60,17802,Societal Computing Pre-Thesis,Fredrikson
+61,17802,Societal Computing Pre-Thesis,Goel
+62,17802,Societal Computing Pre-Thesis,Fang
+63,17802,Societal Computing Pre-Thesis,Christin
+64,17803,Empirical Methods,Vasilescu
+65,17806,Software Engineering Independent Study,Aldrich
+66,17806,Software Engineering Independent Study,Breaux
+67,17806,Software Engineering Independent Study,Garlan
+68,17806,Software Engineering Independent Study,Herbsleb
+69,17806,Software Engineering Independent Study,Kaestner
+70,17806,Software Engineering Independent Study,Le Goues
+71,17806,Software Engineering Independent Study,Scherlis
+72,17806,Software Engineering Independent Study,Shaw
+73,17806,Software Engineering Independent Study,Vasilescu
+74,17806,Software Engineering Independent Study,Miller
+75,17806,Software Engineering Independent Study,Kang
+76,17806,Software Engineering Independent Study,Fredrikson
+77,17821,Computer Simulation of Complex Socio-Technical Systems,Carley
+78,17881,Special Topics: Sensing and Internet-of-Things,Agarwal
+79,17905,Software Engineering Reflection,Sunshine
+80,17909,Requirements for Information Systems,Breaux
+81,17939,Requirements for Embedded Systems,Pavetti
+82,17993,Societal Computing Graduate Reading and Research,Christin
+83,17994,Societal Computing Practicum,Christin
+84,17995,Societal Computing Practicum Internship,Christin
+85,17996,Societal Computing Independent Study,Carley
+86,17996,Societal Computing Independent Study,Sadeh
+87,17996,Societal Computing Independent Study,Pfeffer
+88,17996,Societal Computing Independent Study,Cranor
+89,17996,Societal Computing Independent Study,Agarwal
+90,17996,Societal Computing Independent Study,Herbsleb
+91,17996,Societal Computing Independent Study,Kolter
+92,17996,Societal Computing Independent Study,Breaux
+93,17996,Societal Computing Independent Study,Bauer
+94,17996,Societal Computing Independent Study,Fredrikson
+95,17996,Societal Computing Independent Study,Goel
+96,17996,Societal Computing Independent Study,Fang
+97,17996,Societal Computing Independent Study,Vasilescu
+98,17996,Societal Computing Independent Study,Christin
+99,17997,Software Engineering Graduate Reading & Research,Kaestner
+100,17998,Software Engineering Practicum Internship,Kaestner
+101,17214,"Principles of Software Construction: Objects, Design, and Concurrency",Le Goues
+102,17214,"Principles of Software Construction: Objects, Design, and Concurrency",Hellendoorn
+103,17313,Foundations of Software Engineering,Hilton
+104,17313,Foundations of Software Engineering,Padhye
+105,17313,Foundations of Software Engineering,Timperley
+106,17313,Foundations of Software Engineering,Nam
+107,17331,"Information Security, Privacy, and Policy",Sadeh
+108,17331,"Information Security, Privacy, and Policy",McDonald
+109,17428,Machine Learning and Sensing,Goel
+110,17428,Machine Learning and Sensing,Ahuja
+111,17514,"Principles of Software Construction: Objects, Design, and Concurrency:",Hellendoorn
+112,17514,"Principles of Software Construction: Objects, Design, and Concurrency:",Le Goues
+113,17614,Formal Methods,Kang
+114,17614,Formal Methods,Garlan
+115,17623,Quality Assurance,Gennari
+116,17623,Quality Assurance,Hilton
+117,17624,Advanced Formal Methods,Garlan
+118,17624,Advanced Formal Methods,Kang
+119,17625,API Design,Bass
+120,17625,API Design,Ashok
+121,17631,"Information Security, Privacy, and Policy:",Sadeh
+122,17631,"Information Security, Privacy, and Policy:",McDonald
+123,17636,Applied Distributed Systems,Bass
+124,17636,Applied Distributed Systems,Yasar
+125,17646,DevOps and Continuous Integration,Bass
+126,17646,DevOps and Continuous Integration,Yasar
+127,17702,Current Topics in Privacy Seminar,McDonald
+128,17702,Current Topics in Privacy Seminar,Sadeh
+129,17714,Formal Methods,Kang
+130,17714,Formal Methods,Garlan
+131,17724,Advanced Formal Methods,Garlan
+132,17724,Advanced Formal Methods,Kang
+133,17728,Machine Learning and Sensing,Ahuja
+134,17728,Machine Learning and Sensing,Goel
+135,17731,Foundations of Privacy,Wu
+136,17731,Foundations of Privacy,Fanti
+137,17808,Software Engineering Research,Garlan
+138,17808,Software Engineering Research,Le Goues
+139,17808,Software Engineering Research,Aldrich
+140,17808,Software Engineering Research,Breaux
+141,17808,Software Engineering Research,Padhye
+142,17808,Software Engineering Research,Vasilescu
+143,17808,Software Engineering Research,Miller
+144,17808,Software Engineering Research,Hellendoorn
+145,17808,Software Engineering Research,Kaestner

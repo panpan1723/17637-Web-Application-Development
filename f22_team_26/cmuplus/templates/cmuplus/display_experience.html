@@ -1,0 +1,43 @@
+<div>
+    <link href="/static/cmuplus/display-experience-page.css" rel="stylesheet" />
+    <div id="grade_satisfication" class="display-experience-page-container">
+      <div
+        id="display_course_experience"
+        class="display-experience-page-container1"
+      >
+        <a href="{% url 'course_info' course_experience.course_number %}"><span id="course_name" class="display-experience-page-text">Course: {{course_experience.course_name}}-{{course_experience.course_number}}</span></a>
+        <span id="semester" class="display-experience-page-text01">Semester: {{course_experience.semester}}</span>
+        <span id="professor_firstname" class="display-experience-page-text02">
+          Professor Firstname: {{course_experience.professor_firstname}}
+        </span>
+        <span id="professor_lastname" class="display-experience-page-text03">
+          Professor Lastname: {{course_experience.professor_lastname}}
+        </span>
+        <span id="credit" class="display-experience-page-text04">Credit: {{course_experience.credit}}</span>
+        <span id="load" class="display-experience-page-text05">Load: {{course_experience.load}}</span>
+        <span id="grade_satisfaction" class="display-experience-page-text06">
+          Grade Satisfaction: {{course_experience.grade_satisfication}}
+        </span>
+        <span id="difficulty" class="display-experience-page-text07">
+          Difficulty: {{course_experience.difficulty}}
+        </span>
+        <span id="grade" class="display-experience-page-text08">Grade: {{course_experience.grade}}</span>
+        <span id="subject" class="display-experience-page-text09">Subject: {{course_experience.subject}}</span>
+        <span id="content" class="display-experience-page-text10">Content: {{course_experience.content}}</span>
+        {% if course_experience.is_anonymous == 1 %}
+        <span id="created_by" class="display-experience-page-text11">
+            Created By: Anonymous User
+        </span>
+        {% else %}
+        <span id="created_by" class="display-experience-page-text11">
+            Created By: {{course_experience.created_by}}
+        </span>
+        {% endif %}
+        <span id="creation_time" class="display-experience-page-text12">
+          Creation Time: {{course_experience.creation_time}}
+        </span>
+        <p></p>
+        <button onclick="history.back()">Go Back</button>
+      </div>
+    </div>
+  </div>

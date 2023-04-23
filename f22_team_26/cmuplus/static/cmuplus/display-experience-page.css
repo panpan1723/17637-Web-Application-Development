@@ -1,0 +1,99 @@
+.display-experience-page-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.display-experience-page-container1 {
+  display: flex;
+  align-self: stretch;
+  margin-top: var(--dl-space-space-threeunits);
+  align-items: flex-start;
+  margin-left: var(--dl-space-space-threeunits);
+  margin-right: var(--dl-space-space-threeunits);
+  margin-bottom: var(--dl-space-space-threeunits);
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 60px;
+}
+.display-experience-page-text {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text01 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text02 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text03 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text04 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text05 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text06 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text07 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text08 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text09 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text10 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text11 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}
+.display-experience-page-text12 {
+  font-size: 25px;
+  font-style: normal;
+  font-family: Times New Roman;
+  font-weight: 600;
+}

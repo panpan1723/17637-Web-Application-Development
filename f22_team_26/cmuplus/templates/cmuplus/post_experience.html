@@ -1,0 +1,83 @@
+{% extends "cmuplus/base.html" %}
+{% block content %}
+        <div class="container">
+        <div>
+            <h2 class="title">Post Experience</h2>
+        </div>
+        <span id="error" class="error">{{request.session.temp_data}}</span>
+        <p></p>
+            <!-- <hr> -->
+        <p></p>
+
+        <div class="container border bg-white p-3 my-3">
+        <form method="POST" >
+            {% csrf_token %}
+            <table>
+                    {{form}}
+                <tr>
+                    <td></td>
+                    <td><button id="id_login_button" type="submit" class="btn btn-outline-primary">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+
+        <script>
+            $(function () {
+                var availableCourses = [
+                    {% for c in course_list %}
+                        "{{ c.course_number }}",
+                    {% endfor %}
+                ];
+                var set = new Set(availableCourses);
+                $("#id_course_number").autocomplete({
+                    source: Array.from(set),
+                });
+                let x = document.getElementById('id_professor_lastname');
+                select = document.createElement("select");
+                select.setAttribute("id", "id_lastname_choice");
+                select.setAttribute("onchange", "fillInLastname(event)");
+                x.closest('td').prepend(select);
+
+            });
+        </script>
+        <script>
+            let coursesData = [
+                {% for c in course_list %}
+                    {
+                        id: "{{c.id}}",
+                        course_number: "{{c.course_number}}",
+                        course_name: "{{c.course_name}}",
+                        professor_lastname: "{{c.professor_lastname}}",
+                    },
+                {% endfor %}
+            ];
+            $('#id_course_number').on('blur input', function() {
+                let selectedCourse = coursesData.find(coursedata => coursedata.course_number == document.getElementById('id_course_number').value);
+                document.getElementById('id_course_name').value = selectedCourse.course_name;
+                document.getElementById('id_professor_lastname').value = selectedCourse.professor_lastname;
+
+                let lname = coursesData.filter(cd => cd.course_number == document.getElementById('id_course_number').value)
+                                       .map(cd => (cd.professor_lastname));
+                let select = document.getElementById("id_lastname_choice");
+                select.selectedIndex = 0;
+                //remove all options
+                while (select.options.length > 0) {
+                    select.remove(0);
+                }
+                //add new options
+                for (let idx in lname) {
+                    let option = document.createElement("option");
+                    option.text = lname[idx];
+                    option.value = lname[idx];
+                    select.appendChild(option);
+                }
+            });
+        </script>
+        <script>
+            function fillInLastname(e) {
+                document.getElementById("id_professor_lastname").value = e.target.value
+            }
+        </script>
+    </div>
+{% endblock %}

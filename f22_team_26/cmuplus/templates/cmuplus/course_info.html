@@ -1,0 +1,77 @@
+{% extends "cmuplus/base.html" %}
+{% block content %}
+        {% if course_number %}
+            <div class="container bg-white border p-3 my-3">
+                <h2>{{ course_name }} ({{ course_number }})</h2>
+                {% if message %}
+                    &emsp;&emsp;<a>- {{ message }}</a>
+                {% endif %}
+            </div>
+            <div class="container bg-white border p-3 my-3">
+                <div class="grid-container">
+                    <span class="summary">Loading</span>
+                    <span class="summary">Grade Satisfication</span>
+                    <span class="summary">Difficulty</span>
+                    <span class="summary"><div class="circle1">{{ load }}</div></span>
+                    <span class="summary"><div class="circle2">{{ grade_satis }}</div></span>
+                    <span class="summary"><div class="circle3">{{ difficulty }}</div></span> 
+                </div>
+            </div>
+
+            <div class="container bg-white border p-3 my-3">
+                <h3>Course Info</h3>
+                <hr>
+                &emsp;<a>Course Number: <a id="course_num">{{ course_number }}</a></a><br><br>
+                &emsp;<a>Course Name: {{ course_name }}</a><br><br>
+                &emsp;<a>Credit: {{ credit }}</a><br><br>
+                &emsp;<a>Professor's Last Name: 
+                    {% for pname in professor_name %}
+                        <a>{{ pname }}, </a>
+                    {% endfor %}
+                </a><br><br>
+            </div>
+            
+            <div class="container bg-white border p-3 my-3">
+                <h3>Past Statistics</h3>
+                <hr>
+                <div id="container" style="width: 75%;">
+                    <canvas id="barchart"></canvas>
+                    <span id="error" class="error"></span>
+                </div>
+            </div>
+
+            <div class="container bg-white border p-3 my-3">
+                <h3>Course Experiences</h3>
+                <hr>
+                {% if course %}
+                    {% for c in course %}
+                        <b class="text-primary">{{ c.subject }}</b>
+                        <span style="font-style: italic;" class="text-muted">
+                        ({{ c.semester }} 
+                            {% if c.is_anonymous %}
+                                {{ c.created_by }} 
+                            {% else %}
+                                anonymous
+                            {% endif %}
+                        @{{c.creation_time}})
+                        </span>
+                        <br><br>
+                        &emsp;<a>{{ c.content }}</a>
+                        <hr>
+                    {% endfor %}
+
+                {% else %}
+                    &emsp;<a>No one posts an experience. Taken this course? Post it!</a>
+                {% endif %}
+            </div>
+        
+        {% else %}
+            <p>{{ message }}</p>
+        
+        {% endif %}
+
+        <script>
+            var course_num = document.getElementById("course_num").innerHTML.trim();
+            window.onload = create_barchart(course_num);
+        </script>
+{% endblock %}

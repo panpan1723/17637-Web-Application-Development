@@ -1,0 +1,47 @@
+
+{% extends "cmuplus/base.html" %}
+{% block content %}
+<form action="{% url 'discussion_board' %}" method="POST">
+    <div class="container p-3 my-3 border bg-white">
+        <div class="row">
+            <h4 id="id_page_name">Tell us what is happening!</h4>
+        </div>
+        <br>
+        <div class="row">
+        <table class="table-hover">
+            {{form}}
+        </table>
+        </div>
+        <div class="row">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-2">
+        <button class="btn btn-outline-primary" id="id_post_button" type="submit">Add Post</button>
+        </div>
+        <div class="col-sm-8"></div>
+        </div>
+        <span id="error" class="error"></span>
+    </div>
+        {% for item in items %}
+            <div class="container border p-3 my-3 bg-white" id="id_post_div_{{item.id}}">
+                <div class="row">
+                    <div class="text-muted" style="font-size: 14px; font-style: italic;">Posted by <a href="" id="id_post_profile_{{item.id}}">{{item.user.first_name}} {{item.user.last_name}}</a> at {{item.creation_time|date:"n/j/Y g:i A"}}</div>
+                </div>
+                <div class="row">
+                    <h5 class="text-primary" id="id_post_title_{{item.id}}">{{item.title}}</h5>
+                </div>
+                <div class="row">
+                    <div class="post-text" id="id_post_text_{{item.id}}">{{item.text}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div class="text-muted" style="font-size: 14px; font-style: italic;">{{item.comments.count}} Comments <a class="like">Like</a></div>
+                    </div>
+                    <div class="col-sm-2">
+                        <a id="id_view_post_button" style="float:right" href="{% url 'post_info' item.id %}">View Post</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% csrf_token %}
+    </form>
+{% endblock %}

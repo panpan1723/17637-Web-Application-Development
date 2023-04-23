@@ -1,0 +1,67 @@
+p {
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.summary {
+    font-size: 25px;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.circle1 {
+    width: 100px;
+    height: 100px;
+    line-height: 80px;
+    border-radius: 60%;
+    font-size: 40px;
+    font-family: sans-serif;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    background: #F7D5DF;
+}
+.circle2 {
+    width: 100px;
+    height: 100px;
+    line-height: 80px;
+    border-radius: 60%;
+    font-size: 40px;
+    font-family: sans-serif;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    background: #FFEF9F;
+}
+.circle3 {
+    width: 100px;
+    height: 100px;
+    line-height: 80px;
+    border-radius: 60%;
+    font-size: 40px;
+    font-family: sans-serif;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    background: #C0F7A4;
+}
+
+a {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+b {
+    font-size: 22px;
+    font-family: sans-serif;
+}

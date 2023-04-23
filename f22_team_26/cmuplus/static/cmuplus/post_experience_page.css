@@ -1,0 +1,35 @@
+input, label, select, button, textarea {
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: left;
+}
+#id_course_name, #id_professor_lastname {
+    background-color: lightgrey;
+}
+input[type=checkbox] {
+    transform: scale(1.8);
+    margin-left: 5px;
+}
+b {
+    font-size: 22px;
+    font-family: sans-serif;
+}
+.title {
+    font-size: 25px;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+#id_lastname_choice {
+    width: 216.32px;
+    height: 28.77px;
+}
+
+/* .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+} */
