@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Social Network</title>
+        <link rel="stylesheet" href="/static/socialnetwork/base.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="screen">
+            <div id="id_header_div" class="header">
+                <div class="headerLeftBox">
+                    <h1 id="id_site_name" class="headerText">Blog Master</h1>
+                </div>
+                <div class="headerRightBox">
+                    <div class="headerRightUpBox">
+                        <a id="id_nav_profile" class="headerRightDownLink" href="{% url 'my_profile' %}">{{user.get_full_name}}</a>
+                    </div>
+                    <div class="headerRightDownBox">
+                        <a id="id_nav_global_stream" class="headerRightDownLink" href="{% url 'global_stream' %}">Global</a>
+                        <a id="id_nav_follower_stream" class="headerRightDownLink" href="{% url 'follower_stream' %}">Follower</a>
+                        <a id="id_nav_logout" class="headerRightDownLink" href={% url 'logout' %}>Logout</a>
+                    </div>
+                </div>
+            </div><br/><br/>
+            <h3 id="id_page_name">Global Stream</h3>
+
+            <div>
+                <form action="{% url 'global_stream' %}" method="POST" >
+                    <label> New Post: </label>
+                    <input id="id_post_input_text" type="text" name="text">
+                    <button id="id_post_button" type="submit">Submit</button>
+                    {% csrf_token %}
+                </form>
+    
+                {% for post in posts %}
+                    <div id="id_post_div_{{post.id}}">
+                        Post by <a id="id_post_profile_{{post.id}}" style="font-family: verdana; font-size: 18px;" href="{% url 'other_profile' post.user.id %}">{{post.user.first_name}} {{post.user.last_name}}</a> - <b id="id_post_text_{{post.id}}" style="font-size: 18px;">{{post.text}}</b> - <p id="id_post_date_time_{{post.id}}" style="font-family: Times; font-size: 18px;">{{post.creation_time|date:"n/j/Y g:i A"}}</p>
+                    </div>
+                    <form>
+                        <label>Comment:</label>
+                        <input id="id_comment_input_text_{{post.id}}" type="text" name="comment_input_text">
+                        <button id="id_comment_button_{{post.id}}"  type="submit">Submit</button>
+                        {% csrf_token %}
+                    </form>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </body>
+</html>

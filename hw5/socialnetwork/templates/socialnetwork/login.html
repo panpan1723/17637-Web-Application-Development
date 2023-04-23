@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Social Network</title>
+        <link rel="stylesheet" href="/static/socialnetwork/base.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="screen">
+            <div id="id_header_div" class="header">
+                <div class="headerLeftBox">
+                    <h1 id="id_site_name" class="headerText">Blog Master</h1>
+                </div>
+                <div class="headerRightBox">
+                    <div class="headerRightUpBox">
+                    </div>
+                    <div class="headerRightDownBox">
+                        <a id="id_register_link" class="headerRightDownLink" href="register">Register</a>
+                    </div>
+                </div>
+            </div><br/><br/>
+            <h3 id="id_page_name">Login</h3>
+
+            <form method="POST" >
+                {% csrf_token %}
+                <table>
+                        {{form}}
+                    <tr>
+                        <td></td>
+                        <td><button id="id_login_button" type="submit">Submit</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        
+
+    </body>
+</html>
