@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HW2</title>
+        <link rel="stylesheet" href="css/wordish.css">
+        <script src="js/wordish.js"> </script>
+    </head>
+
+    <body>
+        <div class="screen">
+            <div class="game_background">
+                <div id="status" class="status">
+                    Welcome to Wordish
+                </div>
+                <table>
+                    <tr>
+                        <td id="cell_0_0"></td>
+                        <td id="cell_0_1"></td>
+                        <td id="cell_0_2"></td>
+                        <td id="cell_0_3"></td>
+                        <td id="cell_0_4"></td>
+                    </tr>
+                    <tr>
+                        <td id="cell_1_0"></td>
+                        <td id="cell_1_1"></td>
+                        <td id="cell_1_2"></td>
+                        <td id="cell_1_3"></td>
+                        <td id="cell_1_4"></td>
+                    </tr>
+                    <tr>
+                        <td id="cell_2_0"></td>
+                        <td id="cell_2_1"></td>
+                        <td id="cell_2_2"></td>
+                        <td id="cell_2_3"></td>
+                        <td id="cell_2_4"></td>
+                    </tr>
+                    <tr>
+                        <td id="cell_3_0"></td>
+                        <td id="cell_3_1"></td>
+                        <td id="cell_3_2"></td>
+                        <td id="cell_3_3"></td>
+                        <td id="cell_3_4"></td>
+                    </tr>
+                    <tr>
+                        <td id="cell_4_0"></td>
+                        <td id="cell_4_1"></td>
+                        <td id="cell_4_2"></td>
+                        <td id="cell_4_3"></td>
+                        <td id="cell_4_4"></td>
+                    </tr>
+                    <tr>
+                        <td id="cell_5_0"></td>
+                        <td id="cell_5_1"></td>
+                        <td id="cell_5_2"></td>
+                        <td id="cell_5_3"></td>
+                        <td id="cell_5_4"></td>
+                    </tr>
+                </table>
+                <div class="row">
+                    <label> Guess: </label>
+                    <input id="guess_text" type="text">
+                    <button id="guess_button" type="submit" onclick="guess()">Submit</button>
+                </div>
+            </div>
+            <div class="target_background">
+                <div class="row">
+                    <label> New Target: </label>
+                    <input id="target_text" type="text">
+                    <button id="start_button" type="submit" onclick="startGame()">Start</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
